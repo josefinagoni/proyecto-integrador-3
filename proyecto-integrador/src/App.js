@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Card from './components/Card/Card';
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -15,7 +16,11 @@ function App() {
 
         </section>
     </main>
+
+    <Footer />
+
     </React.Fragment>
+
     
   )
 }
