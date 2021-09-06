@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 
 class Card extends Component{
-    constructor(){
+    Constructor(){
         super()
         this.state={
 
@@ -19,7 +19,7 @@ class Card extends Component{
                 </div>
                 <i class="far fa-window-close"></i>
             </section>
-            <main>
+                <main>
                     <img src="./img/image-default.png" alt="">
                     <h3>Título/ Nombre</h3>
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
