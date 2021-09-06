@@ -2,14 +2,15 @@ import React, {Component} from 'react';
 
 
 class Card extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
-            valor: ''
+            
         }
     }
 
     render(){
+        console.log(this.props)
         return(
             <React.Fragment>
             <article>
@@ -21,15 +22,16 @@ class Card extends Component{
                 <i className="far fa-window-close"></i>
             </section>
             <main>
-                <img src="./img/image-default.png" alt=""/>
-                <h3>Título/ Nombre</h3>
-                <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
+                <img src={this.props.dataPelicula.poster_path} alt=""/>
+                <h3>{this.props.dataPelicula.title}</h3>
+                <p className="description">{this.props.dataPelicula.overview}</p>
                 <section className="aditional-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
+                    <p>Reproducciones: {this.props.dataPelicula.popularity}</p>
+                    <p>Fecha de publicacion: {this.props.dataPelicula.release_date}</p>
+                    <p>Idioma: {this.props.dataPelicula.original_language}</p>
+                    <p className='more' onClick={()=>this.props.remove(this.props.dataPelicula.id)}>borrar</p>
                 </section>
-                <a href="">Ver más</a>
+                <button> Ver mas</button>
             </main>
         </article>
         </React.Fragment>
