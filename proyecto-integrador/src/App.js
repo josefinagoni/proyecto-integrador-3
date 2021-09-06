@@ -1,19 +1,23 @@
 import React from 'react';
 import Header from './components/Header/Header';
-import Card from './components/Card/Card'
+import Card from './components/Card/Card';
 
 
 function App() {
   return (
-    <Header/>
+    <React.Fragment>
+    <Header />
+
     <main>
         <button type="button">Cargar más tarjetas</button>
-        <section className="card-container">
-          <Card/>
+        <section class="card-container">
+        <Card />
+
         </section>
     </main>
-
-  );
+    </React.Fragment>
+    
+  )
 }
 
 export default App;
