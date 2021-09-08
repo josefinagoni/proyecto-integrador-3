@@ -29,7 +29,7 @@ class Card extends Component{
                     <p>Reproducciones: {this.props.dataPelicula.popularity}</p>
                     <p>Fecha de publicacion: {this.props.dataPelicula.release_date}</p>
                     <p>Idioma: {this.props.dataPelicula.original_language}</p>
-                    <p className='more' onClick={()=>this.props.remove(this.props.dataPelicula.id)}>borrar</p>
+                    <p className='more' onClick={()=>this.props.remove(this.props.dataPelicula.id)}> Borrar</p>
                 </section>
                 <button> Ver mas</button>
             </main>
