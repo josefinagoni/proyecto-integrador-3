@@ -10,7 +10,7 @@ function App() {
     <Header />
 
     <main>
-        <button type="button">Cargar más tarjetas</button>
+        
         <section class="card-container">
           <h3>Top peliculas</h3>
           <Movies />

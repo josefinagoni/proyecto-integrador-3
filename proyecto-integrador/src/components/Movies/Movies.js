@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Card from '../Card/Card'
+import Card from '../Card/Card';
+import MasTarjetas from '../MasTarjetas/MasTarjetas'
 
 class Movies extends Component{
     constructor(){
@@ -7,7 +8,7 @@ class Movies extends Component{
         this.state = {
             peliculas: [],
             isLoaded: false, 
-            nextUrl: ''
+            nroPagina: ''
         }
     }
     componentDidMount(){
@@ -26,6 +27,7 @@ class Movies extends Component{
         .catch( error => console.log(error))
     }
 
+
     deleteCard(peliculaABorrar){
         let peliculasQueQuedan = this.state.peliculas.filter( pelicula => pelicula.id !== peliculaABorrar);
         
@@ -35,9 +37,13 @@ class Movies extends Component{
     }
 
     
-
     render(){
         return(
+            <React.Fragment>
+            <div className='cargar'>
+                <MasTarjetas />
+            </div>
+            <br />
             <div className="row card-container"> 
             {
                 this.state.isLoaded === false ? 
@@ -46,6 +52,7 @@ class Movies extends Component{
                 <Card key={pelicula.title + idx} dataPelicula={pelicula} /> )
             } 
             </div>
+            </React.Fragment>
         )
     }
 }
