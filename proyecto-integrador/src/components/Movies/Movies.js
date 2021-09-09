@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
-import MasTarjetas from '../MasTarjetas/MasTarjetas'
+//import MasTarjetas from '../MasTarjetas/MasTarjetas'
 import Buscador from '../Buscador/Buscador'
 
 
@@ -11,20 +11,21 @@ class Movies extends Component{
             peliculas: [],
             peliculasIniciales: [],
             isLoaded: false, 
-            nroPagina: ''
+            nroPagina: 1
         }
     }
     componentDidMount(){
-        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=decfa5bfc3151df1ce9acb9ac606d5c4&language=en-US&page=1'
+        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=decfa5bfc3151df1ce9acb9ac606d5c4&language=en-US&page='+ this.state.nroPagina
 
         fetch(url)
         .then( response => response.json() )
         .then ( data=> {
-            console.log(data);
+            //console.log(data);
             this.setState({
                 peliculas: data.results,
                 peliculasIniciales: data.results,
                 isLoaded: true,
+                nroPagina: this.state.nroPagina + 1
                 
             })   
         })
@@ -47,6 +48,20 @@ class Movies extends Component{
             peliculas: peliculasFiltradas
         })
     }
+    addMore(){
+        console.log('hice click')
+        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=decfa5bfc3151df1ce9acb9ac606d5c4&language=en-US&page='+ this.state.nroPagina
+        fetch(url)
+        .then(response => response.json())
+        .then( data => {
+            console.log(data);
+            this.setState({
+                peliculas: this.state.peliculas.concat(data.results),
+                nroPagina: this.state.nroPagina + 1
+            })
+        })
+        .catch (error => console.log(error))
+    }
     
     render(){
         return(
@@ -55,7 +70,8 @@ class Movies extends Component{
             filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>   
              
             <div className='cargar'>
-                <MasTarjetas />
+            <p className='more' onClick={()=> this.addMore()}> Cargar más peliculas</p>
+               
             </div>
             <br />
 
@@ -64,7 +80,7 @@ class Movies extends Component{
                 this.state.isLoaded === false ? 
                 <p> Cargando... </p> :
                 this.state.peliculas.map((pelicula,idx)=> 
-                <Card key={pelicula.title + idx} dataPelicula={pelicula} /> )
+                <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar)=> this.deleteCard(peliculaABorrar)}/> )
             } 
             </div>
             </React.Fragment>

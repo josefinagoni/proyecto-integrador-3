@@ -8,6 +8,7 @@ class Card extends Component{
         this.state={
             text: 'Ver más',
             viewMore: false,
+           
         }
     }
 
@@ -24,6 +25,7 @@ class Card extends Component{
             })
         }
     }
+    
 
     render(){
         console.log(this.props)
@@ -43,7 +45,7 @@ class Card extends Component{
                 <p className="description">{this.props.dataPelicula.overview}</p>
                 <section className="aditional-info">
                     <p>Fecha de publicacion: {this.props.dataPelicula.release_date}</p>
-                    <p className='more' onClick={()=>this.props.deleteCard(this.props.dataPelicula.id)}> Borrar</p>
+                    <p className='more' onClick={()=>this.props.remove(this.props.dataPelicula.id)}> Borrar</p>
                 </section>
                 <div className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}> 
                     <p>Votos: {this.props.dataPelicula.vote_average}</p>
