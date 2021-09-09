@@ -1,0 +1,7 @@
+.row-header{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 10% 10% 70%;
+    justify-content: space-around;
+
+}
