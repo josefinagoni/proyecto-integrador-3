@@ -38,7 +38,7 @@ class Card extends Component{
                 <i className="far fa-window-close"></i>
             </section>
             <main>
-                <img src={`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt={`${this.props.dataPelicula.title}`}/>
+                <img src={`https://image.tmdb.org/t/p/w342${this.props.dataPelicula.poster_path}`} alt={`${this.props.dataPelicula.title}`}/>
                 <h3>{this.props.dataPelicula.title}</h3>
                 <p className="description">{this.props.dataPelicula.overview}</p>
                 <section className="aditional-info">
