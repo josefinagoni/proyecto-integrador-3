@@ -1,16 +1,32 @@
 import React, {Component} from 'react';
-//import './card.css';
+import './card.css';
 
 
 class Card extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
-            valor: ''
+            text: 'Ver más',
+            viewMore: false,
+        }
+    }
+
+    viewMore(){
+        if(this.state.viewMore){
+            this.setState({
+                text: 'Ver más',
+                viewMore: false
+            })
+        }else{
+            this.setState({
+                text: 'Ver menos',
+                viewMore: true
+            })
         }
     }
 
     render(){
+        console.log(this.props)
         return(
             <React.Fragment>
             <article>
@@ -22,15 +38,19 @@ class Card extends Component{
                 <i className="far fa-window-close"></i>
             </section>
             <main>
-                <img src="./img/image-default.png" alt=""/>
-                <h3>Título/ Nombre</h3>
-                <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
+                <img src={`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt={`${this.props.dataPelicula.title}`}/>
+                <h3>{this.props.dataPelicula.title}</h3>
+                <p className="description">{this.props.dataPelicula.overview}</p>
                 <section className="aditional-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
+                    <p>Fecha de publicacion: {this.props.dataPelicula.release_date}</p>
+                    <p className='more' onClick={()=>this.props.deleteCard(this.props.dataPelicula.id)}> Borrar</p>
                 </section>
-                <a href="">Ver más</a>
+                <div className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}> 
+                    <p>Votos: {this.props.dataPelicula.vote_average}</p>
+                    <p>Reproducciones: {this.props.dataPelicula.popularity}</p>
+                    <p>Idioma: {this.props.dataPelicula.original_language}</p>
+                </div>
+                <p className='more' onClick={ () => this.viewMore()}> {this.state.text}</p>
             </main>
         </article>
         </React.Fragment>

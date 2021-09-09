@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './components/Header/Header';
-import Card from './components/Card/Card';
-import Footer from './components/Footer/Footer'
+import Movies from './components/Movies/Movies';
+import Footer from './components/Footer/Footer';
+
 
 
 function App() {
@@ -10,9 +11,11 @@ function App() {
     <Header />
 
     <main>
-        <button type="button">Cargar más tarjetas</button>
+        
         <section class="card-container">
-        <Card />
+          <h3>Top peliculas</h3>
+          <Movies />
+        
 
         </section>
     </main>
