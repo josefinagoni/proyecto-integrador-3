@@ -42,7 +42,7 @@ class Movies extends Component{
     }
 
     filtrarPeliculas(textoAFiltrar){
-        let peliculasFiltradas = this.state.peliculasIniciales.filter(pelicula => pelicula.title.toLowerCase().includes(textoAFiltrar).toLowerCase() )
+        let peliculasFiltradas = this.state.peliculasIniciales.filter(pelicula => pelicula.title.toLowerCase().includes(textoAFiltrar.toLowerCase()) )
         
         this.setState({
             peliculas: peliculasFiltradas
@@ -75,12 +75,14 @@ class Movies extends Component{
             </div>
             <br />
 
-            <div className="row card-container"> 
+            <div className="movies"> 
             {
                 this.state.isLoaded === false ? 
                 <p> Cargando... </p> :
                 this.state.peliculas.map((pelicula,idx)=> 
+                
                 <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar)=> this.deleteCard(peliculaABorrar)}/> )
+    
             } 
             </div>
             </React.Fragment>
