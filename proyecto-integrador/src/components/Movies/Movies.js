@@ -70,7 +70,7 @@ class Movies extends Component{
             
              
             <div className='cargar'>
-            <p className='more' onClick={()=> this.addMore()}> Cargar más peliculas</p>
+            <button type="button"className='more' onClick={()=> this.addMore()}> Cargar más peliculas</button>
                
             </div>
             <br />
