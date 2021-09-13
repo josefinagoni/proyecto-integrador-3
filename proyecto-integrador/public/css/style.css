@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-.body{
-    background-color: blue;
-}
-=======
 body{
     background-color: grey;
 }
@@ -15,4 +10,3 @@ body{
     justify-content: space-between;
     align-items: flex-start;
 }
->>>>>>> 726cc268fe710ba768ab3ba14cabb2b74276f4f6
