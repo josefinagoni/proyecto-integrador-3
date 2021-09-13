@@ -26,7 +26,7 @@ class Header extends Component{
         return (
             <React.Fragment>
             <h1>Top movies</h1>
-        <section>
+        <section className="header">
             <p>Ordenar ASC/ DESC</p>
         <ul className='row-header'>
            <li> <i className="fas fa-th"></i></li>

@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-.body{
-    background-color: blue;
-}
-=======
 body{
     background-color: grey;
 }
-.card-container{
+
+.header{
     margin-top: 20px;
     padding: 0 10px;
     display: flex;
@@ -15,4 +11,12 @@ body{
     justify-content: space-between;
     align-items: flex-start;
 }
->>>>>>> 726cc268fe710ba768ab3ba14cabb2b74276f4f6
+.movies{
+    margin-top: 20px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
