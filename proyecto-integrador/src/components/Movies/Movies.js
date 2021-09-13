@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Card from '../Card/Card';
 //import MasTarjetas from '../MasTarjetas/MasTarjetas'
 import Header from '../Header/Header';
+import '../Movies/movies.css'
 
 
 class Movies extends Component{
@@ -68,13 +69,10 @@ class Movies extends Component{
             <React.Fragment>
             <Header  filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
             
-             
             <div className='cargar'>
-            <button type="button"className='more' onClick={()=> this.addMore()}> Cargar más peliculas</button>
-               
+            <button type="button" onClick={()=> this.addMore()}> Cargar más peliculas</button>
             </div>
-            <br />
-
+    
             <div className="movies"> 
             {
                 this.state.isLoaded === false ? 
@@ -85,6 +83,8 @@ class Movies extends Component{
     
             } 
             </div>
+
+            
             </React.Fragment>
         )
     }

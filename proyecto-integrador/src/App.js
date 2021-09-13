@@ -9,12 +9,8 @@ function App() {
     <React.Fragment>
 
     <main>
-        
-        <section class="card-container">
-         
+        <section>
           <Movies />
-        
-
         </section>
     </main>
 

@@ -10,12 +10,3 @@ body{
     background: rgb(34, 32, 32);
 }
 
-.movies{
-    margin-top: 100px;
-    padding: 0 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-}

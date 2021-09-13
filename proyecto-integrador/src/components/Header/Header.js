@@ -28,15 +28,20 @@ class Header extends Component{
            
         <section className="header">
         <div className="innerHeader">
-        <div className="logo">
-        <img src="" alt=""/>
+        <div >
+        <img src="../img/logo1.jpg" className="logo" alt=""/>
         </div>
+        <div className="titulos">
         <h1>Top movies</h1>
+        </div>
+        <div className="subtitulos">
         <p>Ordenar ASC/ DESC</p>
-        <ul className='row-header'>
-           <li> <i className="fas fa-th"></i></li>
-           <li><i className="fas fa-align-justify"></i></li>
-        </ul>
+    
+            <i className="fas fa-th"></i>
+            <i className="fas fa-align-justify"></i>
+        
+        </div>
+        
         <form action="" onSubmit={(event)=> this.evitarSubmit(event)}>
                 <input type="text" name="search" id="" placeholder="Search" value={this.state.filterBy}
                 onChange ={(evento)=> this.controlarCambios(evento)}/>
