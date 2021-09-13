@@ -31,7 +31,7 @@ class Card extends Component{
         console.log(this.props)
         return(
             <React.Fragment>
-            <article>
+            <article className="movie-card">
             <section className="navigation">
                 <div>
                     <i className="fas fa-chevron-left"></i>
