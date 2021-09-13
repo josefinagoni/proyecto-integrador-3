@@ -75,12 +75,14 @@ class Movies extends Component{
             </div>
             <br />
 
-            <div className="row card-container"> 
+            <div className="movies"> 
             {
                 this.state.isLoaded === false ? 
                 <p> Cargando... </p> :
                 this.state.peliculas.map((pelicula,idx)=> 
+                
                 <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar)=> this.deleteCard(peliculaABorrar)}/> )
+    
             } 
             </div>
             </React.Fragment>
