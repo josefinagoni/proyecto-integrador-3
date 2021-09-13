@@ -42,7 +42,7 @@ class Header extends Component{
         
         </div>
         
-        <form action="" onSubmit={(event)=> this.evitarSubmit(event)}>
+        <form action="" onSubmit={(event)=> this.evitarSubmit(event)} className="buscador">
                 <input type="text" name="search" id="" placeholder="Search" value={this.state.filterBy}
                 onChange ={(evento)=> this.controlarCambios(evento)}/>
                 <button type="submit"><i className="fas fa-search"></i></button>
