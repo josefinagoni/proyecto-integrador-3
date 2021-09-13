@@ -45,13 +45,13 @@ class Card extends Component{
                 <h3>{this.props.dataPelicula.title}</h3>
                 <p className="description">{this.props.dataPelicula.overview}</p>
                 <section className="aditional-info">
-                    <p>Fecha de publicacion: {this.props.dataPelicula.release_date}</p>
+                    <p className="info">Fecha de publicacion:</p> <span>{this.props.dataPelicula.release_date}</span> 
     
                 </section>
                 <div className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}> 
-                    <p>Votos: {this.props.dataPelicula.vote_average}</p>
-                    <p>Reproducciones: {this.props.dataPelicula.popularity}</p>
-                    <p>Idioma: {this.props.dataPelicula.original_language}</p>
+                    <p className="info">Votos: </p> <span>{this.props.dataPelicula.vote_average}</span>
+                    <p className="info">Reproducciones: </p> <span>{this.props.dataPelicula.popularity}</span>
+                    <p className="info">Idioma: </p> <span>{this.props.dataPelicula.original_language}</span>
                 </div>
                 <p className='more' onClick={ () => this.viewMore()}> {this.state.text}</p>
             </main>

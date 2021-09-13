@@ -5,7 +5,8 @@ class Header extends Component{
     constructor(){
         super();
         this.state={
-            filterBy:''
+            filterBy:'',
+            filas: false
 
         }
     }
@@ -20,6 +21,18 @@ class Header extends Component{
             filterBy: evento.target.value
         }, () => this.props.filtrarPeliculas(this.state.filterBy))
         
+    }
+
+    ordenar(){
+        if(this.state.filas){
+            this.setState({
+                    filas: false
+                })
+        } else{
+            this.setState({
+                filas: true
+            })
+        }
     }
 
     render(){
@@ -37,7 +50,7 @@ class Header extends Component{
         <div className="subtitulos">
         <p>Ordenar ASC/ DESC</p>
     
-            <i className="fas fa-th"></i>
+            <i className="fas fa-th" onClick={ () => this.ordenar()}></i>
             <i className="fas fa-align-justify"></i>
         
         </div>
