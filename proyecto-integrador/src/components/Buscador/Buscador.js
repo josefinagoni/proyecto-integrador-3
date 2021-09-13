@@ -24,7 +24,7 @@ class Buscador extends Component{
 
     render(){
         return(
-            <form action="" onSubmit={(event)=> this.evitarSubmit(event)}>
+            <form  onSubmit={(event)=> this.evitarSubmit(event)}>
                 <input type="text" name="search" id="" placeholder="Search" value={this.state.filterBy}
                 onChange ={(evento)=> this.controlarCambios(evento)}/>
                 <button type="submit"><i className="fas fa-search"></i></button>
