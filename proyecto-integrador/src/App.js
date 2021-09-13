@@ -11,7 +11,7 @@ function App() {
     <main>
         
         <section class="card-container">
-          <h3>Top peliculas</h3>
+         
           <Movies />
         
 
