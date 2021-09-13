@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './components/Header/Header';
 import Movies from './components/Movies/Movies';
 import Footer from './components/Footer/Footer';
 
@@ -8,7 +7,6 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <React.Fragment>
-    <Header />
 
     <main>
         

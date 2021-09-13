@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
 //import MasTarjetas from '../MasTarjetas/MasTarjetas'
-import Buscador from '../Buscador/Buscador'
+import Header from '../Header/Header';
 
 
 class Movies extends Component{
@@ -66,8 +66,8 @@ class Movies extends Component{
     render(){
         return(
             <React.Fragment>
-            < Buscador 
-            filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>   
+            <Header  filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
+            
              
             <div className='cargar'>
             <p className='more' onClick={()=> this.addMore()}> Cargar más peliculas</p>
