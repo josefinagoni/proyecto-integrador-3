@@ -68,11 +68,9 @@ class Movies extends Component{
         return(
             <React.Fragment>
             <Header  filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
-            
-            <div className='cargar'>
-            <button type="button" onClick={()=> this.addMore()}> Cargar más peliculas</button>
-            </div>
-    
+           
+           
+           
             <div className="movies"> 
             {
                 this.state.isLoaded === false ? 
@@ -84,7 +82,10 @@ class Movies extends Component{
             } 
             </div>
 
-            
+            <div className='cargar'>
+            <button type="button" onClick={()=> this.addMore()}> Cargar más peliculas</button>
+            </div>
+    
             </React.Fragment>
         )
     }
