@@ -86,19 +86,19 @@ class Movies extends Component{
             <React.Fragment>
             <Header  filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)} ordenar={()=> this.ordenar()} text={this.state.text}/>
            
-            
 
-           
+
             <div className={`movies ${this.state.filas ? 'filas' : 'columnas'}`}> 
             {
                 this.state.isLoaded === false ? 
                 <p> Cargando... </p> :
-                
+                this.state.peliculas.length === 0 ? 
+                <p className = "result">No hay resultados de búsqueda... </p> :
+
                 this.state.peliculas.map((pelicula,idx)=> 
                 
                 <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar)=> this.deleteCard(peliculaABorrar)}/> )
                 
-    
             } 
             </div>
 
