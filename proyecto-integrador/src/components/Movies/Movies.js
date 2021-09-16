@@ -84,7 +84,7 @@ class Movies extends Component{
     render(){
         return(
             <React.Fragment>
-            <Header  filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)} ordenar={()=> this.ordenar()}/>
+            <Header  filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)} ordenar={()=> this.ordenar()} text={this.state.text}/>
            
            
            
@@ -102,8 +102,6 @@ class Movies extends Component{
             <div className='cargar'>
             <button className="centrado" type="button" onClick={()=> this.addMore()}> Cargar más peliculas</button>
             </div>
-
-            <i className={this.state.text} onClick= {()=>this.ordenar()}></i>
     
             </React.Fragment>
         )
