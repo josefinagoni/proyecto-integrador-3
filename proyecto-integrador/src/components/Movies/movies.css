@@ -1,8 +1,18 @@
 .movies{
     margin-top: 120px;
     padding: 0 10px;
+}
+
+.filas{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.columnas{
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
@@ -20,4 +30,7 @@ button.centrado {
 .centrado:hover {
     background-color: #008CBA;
     color: white;
+}
+.fas{
+    color:white
 }
