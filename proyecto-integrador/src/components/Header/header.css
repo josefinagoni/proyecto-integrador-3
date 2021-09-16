@@ -41,12 +41,6 @@
 .subtitulos i{
     margin-right: 20px;
 }
-.filas{
-    flex-direction: row-reverse;
-}
-.columnas{
-    flex-direction: column-reverse;
-}
 
 
 

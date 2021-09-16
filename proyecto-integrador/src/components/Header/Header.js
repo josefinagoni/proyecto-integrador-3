@@ -41,8 +41,7 @@ class Header extends Component{
         <p>Ordenar ASC/ DESC</p>
     
             <i className={this.state.text} onClick= {()=>this.props.ordenar()}></i>
-            
-        
+
         </div>
         
         <form action="" onSubmit={(event)=> this.evitarSubmit(event)} className="buscador">
