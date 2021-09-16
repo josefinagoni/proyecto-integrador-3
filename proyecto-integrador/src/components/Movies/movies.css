@@ -31,3 +31,24 @@ button.centrado {
     background-color: #008CBA;
     color: white;
 }
+.noresults{
+    width: 70%;
+    margin: 0 auto;
+    padding: 0 10px;
+    background-color: white;
+    height: 200px;
+    border: 2px solid rgb(206, 206, 206);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+.noresultsP{
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+    size: 20px;
+    width: 60%;
+    font-size: xx-large;
+    margin-top: auto;
+}
