@@ -84,7 +84,7 @@ class Movies extends Component{
     render(){
         return(
             <React.Fragment>
-            <Header  filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
+            <Header  filtrarPeliculas = {(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)} ordenar={()=> this.ordenar()}/>
            
             
 
