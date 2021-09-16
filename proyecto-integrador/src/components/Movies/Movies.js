@@ -12,7 +12,9 @@ class Movies extends Component{
             peliculas: [],
             peliculasIniciales: [],
             isLoaded: false, 
-            nroPagina: 1
+            nroPagina: 1,
+            filas: false,
+            text: "fas fa-th"
         }
     }
     componentDidMount(){
@@ -63,6 +65,21 @@ class Movies extends Component{
         })
         .catch (error => console.log(error))
     }
+    ordenar(){
+        if(this.state.filas){
+            this.setState({
+                    filas: false,
+                    text: "fas fa-th"
+                })
+        } else{
+            this.setState({
+                filas: true,
+                text: "fas fa-align-justify"
+
+
+            })
+        }
+    }
     
     render(){
         return(
@@ -71,7 +88,7 @@ class Movies extends Component{
            
            
            
-            <div className="movies"> 
+            <div className={`movies ${this.state.filas ? 'filas' : 'columnas'}`}> 
             {
                 this.state.isLoaded === false ? 
                 <p> Cargando... </p> :
@@ -85,6 +102,8 @@ class Movies extends Component{
             <div className='cargar'>
             <button className="centrado" type="button" onClick={()=> this.addMore()}> Cargar más peliculas</button>
             </div>
+
+            <i className={this.state.text} onClick= {()=>this.ordenar()}></i>
     
             </React.Fragment>
         )

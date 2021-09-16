@@ -23,17 +23,7 @@ class Header extends Component{
         
     }
 
-    ordenar(){
-        if(this.state.filas){
-            this.setState({
-                    filas: false
-                })
-        } else{
-            this.setState({
-                filas: true
-            })
-        }
-    }
+    
 
     render(){
         return (
@@ -50,8 +40,8 @@ class Header extends Component{
         <div className="subtitulos">
         <p>Ordenar ASC/ DESC</p>
     
-            <i className="fas fa-th" onClick={ () => this.ordenar()}></i>
-            <i className="fas fa-align-justify"></i>
+            <i className={this.state.text} onClick= {()=>this.props.ordenar()}></i>
+            
         
         </div>
         
