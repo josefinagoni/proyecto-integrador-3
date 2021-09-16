@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import './header.css'
 
 class Header extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
             filterBy:'',
-            filas: false
+           
 
         }
     }
@@ -40,7 +40,7 @@ class Header extends Component{
         <div className="subtitulos">
         <p>Ordenar ASC/ DESC</p>
     
-            <i className={this.state.text} onClick= {()=>this.props.ordenar()}></i>
+            <i className={this.props.text} onClick= {()=>this.props.ordenar()}></i>
 
         </div>
         
